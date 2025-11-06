@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1A237E;
+            --accent-color: #2E7D32;
+            --text-color: #212121;
+            --background-color: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #FFFFFF !important;
+        }
+
+        .nav-link:hover {
+            color: #FFFFFF !important;
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #0000a5;
+        }
+
+        .form-label {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .btn-success {
+            background-color: var(--accent-color);
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #1B5E20;
+        }
+
+        .btn-danger {
+            background-color: var(--accent-color);
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #1B5E20;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Profile</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <form th:action="@{/logout}" method="post">
+                        <button class="btn btn-danger">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Update Profile</h2>
+
+    <form th:action="@{/updateprofile}" th:object="${profile}" method="post">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" th:field="*{phone}" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" th:field="*{dob}">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" th:field="*{address}">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">LinkedIn Profile</label>
+                <input type="url" class="form-control" th:field="*{linkedin}">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Years of Experience</label>
+                <input type="number" class="form-control" th:field="*{experience}" min="0">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Highest Qualification</label>
+                <input type="text" class="form-control" th:field="*{qualification}">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Skills</label>
+                <input type="text" class="form-control" th:field="*{skills}">
+            </div>
+
+            <div class="col-md-12">
+                <label class="form-label">Registered Job</label>
+                <select class="form-select" th:field="*{registeredJob}" required>
+                    <option value="">Select a position</option>
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="fullstack">FullStack Developer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="database">Data Engineer</option>
+                    <option value="ai/ml">AI/ML Engineer</option>
+                    <option value="mobile">Mobile App Developer</option>
+                    <option value="devops">DevOps Engineer</option>
+                    <option value="cloud">Cloud Engineer</option>
+                    <option value="tester">Q/A Engineer</option>
+                    <option value="designer">UI/UX Designer</option>
+                    <option value="manager">Project Manager</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <label class="form-label">Profile Summary</label>
+                <textarea class="form-control" rows="3" th:field="*{summary}"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success mt-4">Save Changes</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

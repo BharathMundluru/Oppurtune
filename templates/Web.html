@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ::-webkit-scrollbar {
+          width: 15px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #adb5bd;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6c757d;
+        }
+        body{
+          font-family: "Open Sans", sans-serif;
+          color: #444444;
+        }
+        .body-1{
+          padding:0px 100px 0px 100px;
+        }
+        h1{
+          font-family: "Raleway", sans-serif;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 56px;
+          color: black;
+        }
+        h2{
+          text-align: center;
+          font-size: 32px;
+          font-weight: bold;
+          position: relative;
+          color: #222222;
+        }
+        h2::before{
+          content: "—— ";
+          color: #3498db;
+          font-weight: lighter;
+        }
+        h2::after{
+          content: " ——";
+          color: #3498db;
+          font-weight: lighter;
+        }
+        h3{
+          text-align: center;
+        }
+        .home{
+          display: flex;
+        }
+        .gif img{
+          float: right;
+        }
+        .h1{
+          display: block;
+          float: left;
+          width: 50%;
+          text-align: left;
+        }
+        .icon{
+          display: block;
+        }
+        .link-5{
+          text-align: center;
+          margin: 0%;
+          border: 0%;
+        }
+        .link{
+          color: #3498db;
+          background-color: white;
+          margin: 0%;
+          border: 2px solid;
+          padding: 10px 35px;
+          border-radius: 30px;
+          font-size: 20px;
+        }
+        .link:hover{
+          background-color: #3498db;
+          color: white;
+        }
+        .heading{
+          display: block;
+          float: left;
+          text-align: left;
+          top: 0%;
+          left: 0%;
+        }
+        .heading::before{
+          content: none;
+        }
+        .heading::after{
+          content: none;
+        }
+        .head{
+          display: flex;
+        }
+        .para1{
+          order: 1;
+          width: 50%;
+          padding: 0px 20px 0px 0px;
+        }
+        .para2{
+          order: 2;
+          width: 50%;
+        }
+        .openbtn {
+          overflow: hidden;
+          background-color: white;
+          position: fixed;
+          top: 0px;
+          width: 100%;
+        }
+        .openbtn a {
+          padding: 10px;
+          text-decoration: none;
+          font-size: 25px;
+          font-weight: 400;
+          color: #555555;
+        }
+        .openbtn a:hover {
+            color: #3498db;
+        }
+        .openbtn h2{
+          text-align: left;
+          top: 0px;
+          left: 50px;
+        }
+        #hbtn{
+          position: fixed;
+          right: 100px;
+          top: 10px;
+        }
+        #hbtn-1{
+          position: fixed;
+          right: 185px;
+          top: 10px;
+        }
+        #hbtn-2{
+          position: fixed;
+          right: 285px;
+          top: 10px;
+        }
+        #hbtn-3{
+          position: fixed;
+          right: 390px;
+          top: 10px;
+        }
+        #hbtn-4{
+          position: fixed;
+          right: 510px;
+          top: 10px;
+        }
+        #hbtn-5{
+          position: fixed;
+          right: 600px;
+          top: 10px;
+        }
+        #hbtn-6{
+          position: fixed;
+          right: 30px;
+          top: 10px;
+          font-size: 24px;
+        }
+        .but{
+          text-align: end;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 400;
+          color: #555555;
+          row-gap: 10px;
+        }
+        .had{
+          display: flex;
+          font-family: "Open Sans", sans-serif;
+        }
+        .job{
+            padding-top: 45px;
+        }
+        .par1{
+          order: 1;
+          width: 50%;
+          padding: 25px;
+          border-radius: 5px;
+          line-height: 1.8;
+        }
+        .par2{
+          order: 2;
+          width: 50%;
+          padding: 20px;
+          border-radius: 5px;
+          line-height: 1.8;
+        }
+        .ref{
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+        .ref-01{
+          font-size: 36px;
+          text-align: center;
+          color: white;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #3498db;
+        }
+        .ref-1{
+          text-decoration: none;
+          color: #3498db;
+        }
+        .par1:hover{
+          color: white;
+          background-color: #3498db;
+          .ref{
+            color: white;
+          }
+          .ref-1{
+            color: #222222;
+          }
+          .ref-01{
+            color: #3498db;
+            background-color: white;
+          }
+        }
+        .par2:hover{
+          color: white;
+          background-color: #3498db;
+          .ref{
+            color: white;
+          }
+          .ref-1{
+            color: #222222;
+          }
+          .ref-01{
+            color: #3498db;
+            background-color: white;
+          }
+        }
+        .tech {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 25px;
+          max-width: 1000px;
+          padding: 20px;
+          justify-items: center;
+          aling-items: center;
+        }
+        .card {
+          background: #f5f5f5;
+          padding: 20px;
+          text-align: center;
+          border-radius: 12px;
+          transition: transform 0.2s;
+          font-size: 26px;
+          width: 450px;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+          background: #e6f0ff;
+        }
+        .logo {
+          text-decoration: none;
+          font-size: 26px;
+          color: #333;
+          font-weight: bold;
+        }
+        .part{
+          padding-left: 100px;
+          font-size: 20px;
+        }
+        .part::before{
+          font-size: 40px;
+          color: #e1f0fa;
+        }
+        .part::after{
+          font-size: 40px;
+          color: #e1f0fa;
+        }
+        .armi{
+          border-radius: 5px;
+        }
+        .point{
+          padding: 0px;
+        }
+        .team{
+          text-align: center;
+        }
+        .link-1{
+          background-color: #3498db;
+          color: white;
+          border: 0px;
+          font-size: 20px;
+          padding: 10px 10px;
+          border-radius: 5px;
+        }
+        .car{
+          display: flex;
+          flex-direction: row;
+          column-gap: 10px;
+        }
+        .full{
+          display: block;
+          border: 2px solid #3498db;
+          border-radius: 8px;
+          padding: 20px;
+          font-size: 20px;
+          width: 28%;
+          height: auto;
+        }
+        .dev{
+          display: block;
+          border: 2px solid #3498db;
+          border-radius: 8px;
+          padding: 20px;
+          font-size: 20px;
+          width: 28%;
+          height: auto;
+        }
+        .perform{
+          display: block;
+          border: 2px solid #3498db;
+          border-radius: 8px;
+          padding: 20px;
+          font-size: 20px;
+          width: 28%;
+          height: auto;
+        }
+        ul{
+          list-style: none;
+        }
+        ul li:before{
+          content: '● ';
+          color: #3498db;
+        }
+        .cbtn-1{
+          text-align: center;
+           style="font-size: 30px;"
+        }
+        .cbtn{
+          background-color: #3498db;
+          border: 0;
+          color: white;
+          padding: 10px;
+          border-radius: 30px;
+        }
+        .contact{
+          display: flex;
+          flex-direction: row;
+        }
+        .mail{
+          display: block;
+          width: 35%;
+          padding: 0px 0px 60px 0px;
+        }
+        .message{
+          display: block;
+          width: 40%;
+          padding: 70px 0px 0px 0px;
+        }
+        .address{
+            display: block;
+            padding: 50px 10px;
+            width: 25%;
+        }
+        .Address{
+            display: inline;
+        }
+        .Add{
+            display: block;
+            padding: 0%;
+        }
+        .box{
+          width: 100%;
+          height: 50px;
+        }
+        .box-1{
+          width: 100%;
+          height: 140px;
+          resize: none;
+          text-align: start;
+        }
+        .copy{
+          display: block;
+          padding: 20px;
+        }
+        .last{
+            float: right;
+        }
+        .lb{
+          position: fixed;
+          background-color: #3498db;
+          color: white;
+          width: 40px;
+          height: 40px;
+          bottom: 10px;
+          right: 30px;
+          border-radius: 5px;
+          border: 2px solid ;
+        }
+        .footer{
+          display: block;
+          word-spacing: 10px;
+          padding: 20px;
+          padding-left: 200px;
+        }
+        .foot{
+          left: 0px;
+          bottom: 0px;
+          width: 100%;
+          display: flex;
+          padding-left: 100px;
+        }
+        #hbtn-10{
+          position:static;
+          right: 0px;
+          bottom: 10px;
+          color: #555555;
+        }
+        #hbtn-9{
+          position: static;
+          right: 6dvb;
+          bottom: 10px;
+          color: #555555;
+        }
+        #hbtn-8{
+          position: static;
+          right: 6dvb;
+          bottom: 10px;
+          color: #555555;
+        }
+        #hbtn-7{
+          position: static;
+          right: 6dvb;
+          bottom: 10px;
+          color: #555555;
+        }
+        @media (max-width : 1400px){
+          #hbtn{
+            padding-left: 300px;
+          }
+        }
+        @media (max-width : 1200px){
+          #hbtn{
+            padding-left: 200px;
+          }
+          .port{
+            display: block;
+            float: center;
+            text-align: center;
+            columns: 2;
+            padding: 0%;
+          }
+          .h1{
+            width: 100%;
+            text-align: left;
+          }
+        }
+        @media (max-width : 1100px){
+          #hbtn{
+            padding-left: 150px;
+          }
+        }
+        @media (max-width : 1000px){
+          .body-1{
+            padding: 0px 50px 0px 50px;
+          }
+          .home{
+            display: block;
+          }
+          .openbtn{
+            position: fixed;
+          }
+          .gif{
+            display: block;
+            width: auto;
+          }
+          .hpic{
+            text-align: center;
+          }
+          .gif img{
+            width: auto;
+            width: 850px;
+            height: 400px;
+          }
+          .h1{
+            width: 100%;
+            text-align: left;
+          }
+
+        #hbtn{
+          position: fixed;
+          right: 100px;
+          top: 10px;
+        }
+        #hbtn-1{
+          position: fixed;
+          right: 170px;
+          top: 10px;
+        }
+        #hbtn-2{
+          position: fixed;
+          right: 270px;
+          top: 10px;
+        }
+        #hbtn-3{
+          position: fixed;
+          right: 360px;
+          top: 10px;
+        }
+        #hbtn-4{
+          position: fixed;
+          right: 440px;
+          top: 10px;
+        }
+        #hbtn-5{
+          position: fixed;
+          right: 505px;
+          top: 10px;
+        }
+          .head{
+            display: block;
+          }
+          .para1{
+            width: auto;
+          }
+          .para2{
+            width: 100%;
+          }
+          .had{
+            display: block;
+          }
+          .par1{
+            width: auto;
+          }
+          .par2{
+            width: 100%;
+          }
+          .tech-1{
+            display: block;
+            columns: 1;
+          }
+          .tech-2{
+            display: block;
+            columns: 1;
+          }
+          .tech-3{
+            display: block;
+            columns: 1;
+          }
+          .point{
+            padding: 40;
+          }
+          .car{
+            display: block;
+            align-items: center;
+          }
+          .full{
+            width: 350px;
+          }
+          .dev{
+            width: 350px;
+          }
+          .perform{
+            width: 350px;
+          }
+          .contact{
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+            flex-grow: 1;
+          }
+          .mail{
+              display: block;
+              width: 100%;
+              padding: 0%;
+          }
+          .message{
+              display: block;
+              width: 100%;
+              padding: 0%;
+          }
+          .address{
+               display: block;
+               padding: 0%;
+               width: 100%;
+          }
+          .copy{
+            display: block;
+            padding: 0%;
+          }
+          .footer{
+            text-align: end;
+            display: inline;
+            padding-left: 100px;
+          }
+          .foot{
+            padding-left: 0%;
+            display: block;
+          }
+        }
+        .openbtn .icon {
+          display: none;
+        }
+        @media screen and (max-width: 900px) {
+          .openbtn a {
+            display: none;
+          }
+          .openbtn a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        @media screen and (max-width: 900px) {
+          .openbtn.responsive {
+            position: relative;
+          }
+          .openbtn.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .openbtn.responsive a {
+            float: right;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+          }
+          .gif img{
+            width: 700px;
+            height: 400px;
+          }
+        }
+        @media (max-width : 600px){
+          body{
+            padding: 0%;
+          }
+          .hpic{
+            width: 300px;
+            height: 200px;
+          }
+        }
+    </style>
+</head>
+<body>
+<div class="openbtn" id="openbuton">
+    <h2 class="heading">Opportune</h2>
+    <div class="opbtn">
+        <a class="but" id="hbtn-5"onclick="openNav()" href="#" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">Home</a>
+        <a class="but" id="hbtn-4"onclick="openNav()" href="#about" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">About</a>
+        <a class="but" id="hbtn-3"onclick="openNav()" href="#platform" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">Platform</a>
+        <a class="but" id="hbtn-2"onclick="openNav()" href="#careers" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">Careers</a>
+        <a class="but" id="hbtn-1" onclick="openNav()" href="#contactus" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">Contact</a>
+        <a class="but" id="hbtn" onclick="openNav()" href="/login.html" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='#555555'">Login</a>
+        <a href="javascript:void(0);" class="icon" id="hbtn-6" onclick="myFunction()">&#9776;</a>
+    </div>
+</div>
+<div class="body-1">
+    <br>
+    <br>
+    <br>
+    <div id="#" class="home">
+        <br>
+        <br>
+        <br>
+        <div class="gif">
+            <img class="job" src="https://static.vecteezy.com/system/resources/previews/000/169/250/non_2x/young-man-searching-for-jobs-vector.jpg" width="950px">
+            <div class="h1">
+                <div class="extra"><br/></div>
+                <div class="extra"><br/></div>
+                <h1>Get your job in Opportune .</h1>
+                <p style="font-size: 30px;">
+                    Opportune is a modern job board platform designed to connect talented job seekers with the right opportunities and help employers find the perfect fit for their teams.
+                </p>
+                <br>
+                <a href="#about"><button class="link"  style="font-size: 30px;">Get Started</button></a>
+                <div class="extra"><br/></div>
+                <div class="extra"><br/></div>
+            </div>
+        </div>
+    </div>
+    <div class="extra"><br/></div>
+    <div class="extra"><br/></div>
+    <div id="about">
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <br>
+        <h2>ABOUT US</h2>
+        <div class="head">
+            <p class="para1" style="font-size: 26px;">
+                At Opportune, we believe that everyone deserves the chance to find meaningful work and grow their career. Our mission is to bridge the gap between ambitious candidates and forward-thinking employers through a seamless, user-friendly platform.
+            </p>
+            <p class="para2" style="font-size: 26px;">
+                Our mission is to bridge the gap between ambition and opportunity. With secure user accounts and clear roles, everyone knows exactly where they stand.
+            </p>
+        </div>
+        <div class="head">
+            <p class="para1" style="font-size: 26px;">
+                Job seekers can easily search for relevant positions and submit secure applications. Employers benefit from an efficient system to post vacancies and manage applicants.
+            </p>
+            <p class="para2" style="font-size: 26px;">
+                Opportune upholds fairness, transparency, and equal opportunity throughout the hiring process. We are committed to maintaining a reliable and user-friendly environment for all users.
+            </p>
+        </div>
+        <div class="partners">
+            <h2>COMMUNITY</h2>
+            <div class="point">
+                <p class="part" style="font-size: 26px;">Opportune is more than just a job board; it represents a growing community of driven individuals and organizations. Our goal is to bring together job seekers, employers, and future collaborators in a supportive and trustworthy environment. We believe that opportunities grow when people connect, share ideas, and work towards mutual success. As Opportune evolves, we aim to expand this community to include mentors, industry experts, and partners who share our vision. Whether you are searching for your next role or looking to connect with potential talent, you are part of our mission to shape a better future for work.</p>
+            </div>
+            <br/>
+            <br/>
+            <div class="point">
+                <p class="part" style="font-size: 26px;">Our vision is to create an accessible, secure, and transparent platform that empowers individuals to find the right opportunities and helps organizations build stronger teams. Opportune exists to bridge the gap between ambition and employment by making the hiring process clear, fair, and efficient for everyone involved. As we grow, we aim to become a trusted space where talent, ideas, and possibilities come together to shape the future of work.</p>
+            </div>
+        </div>
+    </div>
+    <div id="platform">
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <h2>PLATFORM</h2>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <div class="had">
+            <div class="par1">
+                <div class="ref-01">
+                    <span>&#127952;</span>
+                </div>
+                <div class="extra"><br/></div>
+                <a class="ref" href="#"  style="font-size: 30px;">Job Listings</a>
+                <p style="font-size: 26px;">
+                    Opportune offers an extensive job board where seekers can browse openings across industries, filter listings, and apply directly to employers in a secure environment.
+                </p>
+            </div>
+            <div class="extra"><br/></div>
+            <div class="par2">
+                <div class="ref-01">
+                    <span>&#128196;</span>
+                </div>
+                <div class="extra"><br/></div>
+                <a class="ref" href="#"  style="font-size: 30px;"> Employer Dashboard</a>
+                <p style="font-size: 26px;">
+                    Employers can publish job postings, review applications, and track candidate status through a user-friendly dashboard designed to streamline recruitment.
+                </p>
+            </div>
+        </div>
+        <div class="extra"><br/></div>
+        <div class="had">
+            <div class="par1">
+                <div class="ref-01">
+                    <span>&#8855;</span>
+                </div>
+                <div class="extra"><br/></div>
+                <a class="ref" href="#"  style="font-size: 30px;"> Application Management</a>
+                <p style="font-size: 26px;">
+                    Jobseekers can submit applications, upload resumes, and monitor their application status, ensuring a smooth and transparent hiring experience.
+                </p>
+            </div>
+            <div class="extra"><br/></div>
+            <div class="par2">
+                <div class="ref-01">
+                    <span>&#x1F310;</span>
+                </div>
+                <div class="extra"><br/></div>
+                <a class="ref" href="#"  style="font-size: 30px;">Secure User Access</a>
+                <p style="font-size: 26px;">
+                    Opportune uses robust authentication and encryption to ensure that user profiles, applications, and employer data remain safe and confidential at all times.
+                </p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <h2>TECH JOBS</h2>
+        <br/>
+            <div class="tech">
+                <div class="card">
+                    <a class="logo" href="https://www.w3schools.com/whatis/whatis_frontenddev.asp" target="_blank">Front-end Developer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.geeksforgeeks.org/blogs/backend-development/" target="_blank">Back-end Developer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.w3schools.com/whatis/whatis_fullstack.asp" target="_blank">Full Stack Developer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.geeksforgeeks.org/data-engineering/what-is-data-engineering/" target="_blank">Data Engineer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.coursera.org/articles/ai-engineer" target="_blank">ML / AI Engineer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.geeksforgeeks.org/mobile-computing/what-is-mobile-app-development-process/" target="_blank">Mobile App Developer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.atlassian.com/devops/what-is-devops/devops-engineer" target="_blank">DevOps Engineer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.geeksforgeeks.org/hr/qa-engineer-job-description/" target="_blank">QA/Test Engineer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.coursera.org/articles/what-is-a-cloud-engineer" target="_blank">Cloud Engineer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.guvi.in/blog/ui-ux-designer-roles-and-responsibilities-and-job-description/" target="_blank">UI/UX Designer</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.naukri.com/campus/career-guidance/team-lead-roles-and-responsibilities" target="_blank">Team Lead</a>
+                </div>
+                <div class="card">
+                    <a class="logo" href="https://www.geeksforgeeks.org/software-engineering/software-engineering-role-and-responsibilities-of-a-software-project-manager/" target="_blank">Project Manager</a>
+                </div>
+        </div>
+        <br/>
+        <br>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+    </div>
+    <div id="careers">
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <h2>CAREERS</h2>
+        <br>
+        <div class="car">
+            <div class="full">
+                <h3  style="font-size: 28px;">Developer</h3>
+                <p style="font-size: 26px;">
+                    Developers are the backbone of innovation in technology. They design, build, and maintain software applications that solve real-world problems and enhance user experiences. From coding and debugging to implementing cutting-edge technologies, developers play a vital role in bringing ideas to life. This career path is ideal for creative thinkers with strong problem-solving skills who enjoy building solutions from the ground up.
+                <ul>
+                    <li style="font-size: 26px;">Responsible for designing, coding, and maintaining applications or systems.</li>
+                    <li style="font-size: 26px;">with programming languages, frameworks, and tools to build software solutions.</li>
+                    <li style="font-size: 26px;">Collaborates with testers, designers, and product managers to deliver features.</li>
+                    <li style="font-size: 26px;">Solves technical problems and optimizes code for better performance.</li>
+                    <li style="font-size: 26px;">Keeps up with the latest technologies and trends in software development.</li>
+                    <li style="font-size: 26px;">Can specialize in areas such as Frontend, Backend, Full-Stack, Mobile, or Cloud Development.</li>
+                    <li style="font-size: 26px;">Career growth includes roles like Senior Developer, Team Lead, Software Architect.</li>
+                </ul>
+                </p>
+                <div class="cbtn-1">
+                    <a href="#contactus"><button class="cbtn" padding = "10px"; style="font-size: 28px;">More details contact us</button></a>
+                </div>
+            </div>
+            <br>
+            <div class="dev">
+                <h3  style="font-size: 28px;">Tester</h3>
+                <p style="font-size: 26px;">
+                    Testers ensure the quality and reliability of software products before they reach the end user. By identifying bugs, evaluating performance, and ensuring compliance with standards, testers safeguard the user experience. Their role is crucial in maintaining trust and efficiency in digital products. A career in testing is perfect for detail-oriented professionals who value precision, analysis, and continuous improvement.
+                <ul>
+                    <li style="font-size: 26px;">Ensures software products meet quality standards before release.</li>
+                    <li style="font-size: 26px;">Identifies bugs, errors, and performance issues through manual or automated testing.</li>
+                    <li style="font-size: 26px;">Works closely with developers to fix issues and improve software quality.</li>
+                    <li style="font-size: 26px;">Performs different types of testing: Unit Testing, Integration Testing, Regression Testing, and User Acceptance Testing.</li>
+                    <li style="font-size: 26px;">Ensures software is reliable, secure, and user-friendly.</li>
+                    <li style="font-size: 26px;">Uses tools like Selenium, JUnit, TestNG, or JIRA to track and report bugs.</li>
+                    <li style="font-size: 26px;">Career growth includes roles like QA Lead, Test Automation Engineer, or QA Manager.</li>
+                </ul>
+                </p>
+                <div class="cbtn-1">
+                    <a href="#contactus"><button class="cbtn" padding = "10px"; style="font-size: 28px;">More details contact us</button></a>
+                </div>
+            </div>
+            <br>
+            <div class="perform">
+                <h3  style="font-size: 28px;">Product Team</h3>
+                <p style="font-size: 26px;">
+                    The Product Team bridges the gap between innovation and execution. They oversee the entire product lifecycle—from ideation and strategy to launch and iteration. With a focus on understanding user needs and aligning business goals, the product team ensures that every feature delivers value. This path suits individuals with leadership qualities, strong communication skills, and a passion for turning vision into reality.
+                <ul>
+                    <li style="font-size: 26px;">Responsible for defining the product vision, strategy, and roadmap.</li>
+                    <li style="font-size: 26px;">Understands customer needs and translates them into features and solutions.</li>
+                    <li  style="font-size: 26px;">Works with developers, testers, designers, and business teams to deliver products.</li>
+                    <li  style="font-size: 26px;">Analyzes market trends, user feedback, and competition to improve the product.</li>
+                    <li  style="font-size: 26px;">Ensures that the product aligns with business goals and provides value to users.</li>
+                    <li  style="font-size: 26px;">Involves roles like Product Manager, Business Analyst and Product Owner.</li>
+                    <li style="font-size: 26px;">Career growth includes leadership positions such as Senior Product Manager, Head of Product, or Chief Product Officer (CPO).</li>
+                </ul>
+                </p>
+                <div class="cbtn-1">
+                    <a href="#contactus"><button class="cbtn" padding = "10px"; style="font-size: 28px;">More details contact us</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contactus">
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <div class="extra"><br/></div>
+        <h2>CONTACT US</h2>
+        <div class="contact">
+            <div class="mail">
+                <h4 style="font-size: 32px;">Opportune</h4>
+                <p style="font-size: 28px;">
+                    Opportune is a professional job board platform dedicated to connecting qualified candidates with reputable employers. Join Opportune to discover new possibilities and build a future where opportunity meets ambition.
+                </p>
+                <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fsamasra-soft-inc%2Fabout%2F" target="_blank"><img src="https://tse1.mm.bing.net/th/id/OIP.8dmS22svXDHL3LuVJrsSLAHaHa?pid=Api&P=0&h=180" width="20px"/></a>
+            </div>
+            <div class="address">
+                <div class="Address">
+                    <div class="Add">
+                        <a href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Pune/@18.7643912,73.695611,17.73z/data=!4m6!3m5!1s0x3bc2b405ac494d45:0xc302bc70566bb0f8!8m2!3d18.7646604!4d73.6970317!16s%2Fg%2F11c1qzfh2p?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="https://w7.pngwing.com/pngs/8/868/png-transparent-google-maps-hd-logo.png" width="20px"></a>
+                        <p style="font-size: 26px;">
+                            Indian Institute of Information Technology (IIIT) Pune<br>
+                            Pune 410507<br>
+                            Maharastra<br>
+                            INDIA
+                        </p>
+                        <br>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bharathmundluru.5623a@gmail.com" target="_blank"><img src="https://tse4.mm.bing.net/th/id/OIP.0FuwdoOekVCgwUBFjm654QHaHa?pid=Api&P=0&h=180" width="30px"></a>
+                        <p style="font-size: 26px;">Bharath Mundluru</p>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <div class="message">
+                <input type="text" class="box" id="FirstName" placeholder="Your Name">
+                <br/>
+                <br>
+                <input type="text" class="box" id="Mail" placeholder="Your Email">
+                <br/>
+                <br>
+                <input type="text" class="box" id="Topic" placeholder="Subject">
+                <br/>
+                <br>
+                <input type="text" class="box-1" id="Message" placeholder="Message">
+                <br/><br/>
+                <div class="link-5">
+                    <button class="link" type="submit">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer class="foot">
+        <div class="copy">
+            🄫Copyright
+            <strong>Opportune</strong>
+            All Rights Reserved
+        </div>
+        <div class="extra"><br/></div>
+        <div class="footer">
+            <a class="but" id="hbtn-7" onclick="openNav()" href="#" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='black'">Home</a>
+            <a class="but" id="hbtn-8" onclick="openNav()" href="#about" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='black'">About</a>
+            <a class="but" id="hbtn-9" onclick="openNav()" href="#platform" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='black'">Platform</a>
+            <a class="but" id="hbtn-10" onclick="openNav()" href="#careers" onmouseover= "this.style.color='#3498db'" onmouseleave="this.style.color='black'">Careers</a>
+        </div>
+    </footer>
+</div>
+<script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    function myFunction() {
+      var x = document.getElementById("openbuton");
+      if (x.className === "openbtn") {
+        x.className += " responsive";
+      }
+      else {
+        x.className = "openbtn";
+      }
+    }
+</script>
+<div class="last">
+    <a href="#"><button class="lb" style="font-size: 40px; padding : 10px">&#8593;</button></a>
+</div>
+</body>
+</html>
